@@ -1,6 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/*  int xtoi ( char* x)
+ *  Converting a number string to integer
+ *  
+ *  inputs  
+ *       x: pointer to a string containing a number in decimal,
+ *          hex or bin format.
+ *
+ *  intput format: 
+ *          A decimal number  XXX
+ *          A decimal number  0dXXX
+ *          A hex number      0xXXX
+ *          A bin number      0bXXX
+ *
+ *  output: the number as int
+ */
 int xtoi(char *x) {
   int base=10;
   char *ptr;
@@ -23,6 +38,10 @@ int xtoi(char *x) {
   return strtol(ptr, NULL, base);
 }
 
+/*  printbin( int n, int nbits )
+ *  Printing the nbits lsb's of the integer n in binary format
+ *
+ */
 void printbin(int n, int nbits) {
   for ( int i = nbits-1 ; i >= 0 ; i-- ) {
     printf("%d", (n&(1<<i))?1:0);
