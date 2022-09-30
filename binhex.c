@@ -21,7 +21,6 @@ int xtoi(char *x) {
     ptr=x;
   }
   return strtol(ptr, NULL, base);
-;
 }
 
 void printbin(int n, int nbits) {
@@ -72,12 +71,12 @@ int main(int argc, char **argv) {
     ntens=3;
   }
 
-  printf("%-*s %-*s %-*s\n", ntens, "DEC", nbits, "BIN", nhex, "HEX");
+  printf("%-*s %-*s %-*s\n", nbits, "BIN", nhex, "HEX", ntens, "DEC");
 
   for ( int i = start ; i < end ; i++ ) {
-    printf("%*d ", ntens, i);
     printbin(i,nbits);
-    printf(" %0*X\n", nhex, i);
+    printf(" %0*X ", nhex, i);
+    printf("%*d\n", ntens, i);
   }
 
 
