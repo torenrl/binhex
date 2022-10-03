@@ -90,6 +90,8 @@ int main(int argc, char **argv) {
     ntens=3;
   }
 
+  printf("\nNumber of bits needed: %d\n\n", nbits);
+
   printf("%-*s %-*s %-*s\n", nbits, "BIN", nhex, "HEX", ntens, "DEC");
 
   for ( int i = start ; i < end ; i++ ) {
@@ -97,6 +99,8 @@ int main(int argc, char **argv) {
     printf(" %0*X ", nhex, i);
     printf("%*d\n", ntens, i);
   }
+
+  printf("\n");
 
 
   return 0;
