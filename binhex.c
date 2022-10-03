@@ -27,7 +27,7 @@ long xtoi(char *x) {
   double num = 0;
   int i = 0;
 
-  if ( x[1] >= '0' && x[1] <= '9' ) {
+  if ( x[1] == 'e' || (x[1] >= '0' && x[1] <= '9') ) {
     while ( x[i] != '\0' ) {
       if ( x[i] == 'e' || x[i] == 'E' ) {
         x[i] = '\0';
